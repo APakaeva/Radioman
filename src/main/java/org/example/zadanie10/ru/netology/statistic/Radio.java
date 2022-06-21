@@ -1,8 +1,8 @@
 package org.example.zadanie10.ru.netology.statistic;
 
 public class Radio {
-    public int currentRadioStation;
-    public int currentVolume;
+    private int currentRadioStation;
+    private int currentVolume;
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
@@ -27,10 +27,6 @@ public class Radio {
         if (currentRadioStation > 0) { // если нажать на прев, переключает на предыдущ
             currentRadioStation = currentRadioStation - 1;
         } else currentRadioStation = 9;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void volumePlus() {
