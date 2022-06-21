@@ -12,27 +12,26 @@ public class Radio {
         if (newCurrentRadioStation < 0) {
             return;
         }
-        if (newCurrentRadioStation > 9) {
+        else if (newCurrentRadioStation > 9) {
             return;
         }
         currentRadioStation = newCurrentRadioStation;
     }
 
-    public int nextStation() {
-        if (currentRadioStation >= 0 && currentRadioStation < 9) { // если нажать на кнопку некст, переключается на след
+    public void nextStation() {
+        if (currentRadioStation < 9) { // если нажать на кнопку некст, переключается на след
             currentRadioStation = currentRadioStation + 1;
         }
-        if (currentRadioStation == 9) {
+        else if (currentRadioStation == 9) {
             currentRadioStation = 0;
         }
-        return 0;
     }
 
     public void prevStation() {
-        if (currentRadioStation <= 9 && currentRadioStation > 0) { // если нажать на прев, переключает на предыдущ
+        if (currentRadioStation > 0) { // если нажать на прев, переключает на предыдущ
             currentRadioStation = currentRadioStation - 1;
         }
-        if (currentRadioStation == 0) {
+        else if (currentRadioStation == 0) {
             currentRadioStation = 9;
         }
     }
@@ -45,26 +44,26 @@ public class Radio {
         if (newCurrentVolume < 0) {
             return;
         }
-        if (newCurrentVolume > 10) {
+        else if (newCurrentVolume > 10) {
             return;
         }
         currentVolume = newCurrentVolume;
     }
 
     public void volumePlus() {
-        if (currentVolume < 10 && currentVolume >= 0) {                                          // увеличение громкости
+        if (currentVolume >= 0 && currentVolume < 10) {                                          // увеличение громкости
             currentVolume = currentVolume + 1;
         }
-        if (currentVolume == 10) {
+        else if (currentVolume == 10) {
             currentVolume = 10;
         }
     }
 
     public void volumeMinus() {
         if (currentVolume <= 10 && currentVolume > 0) {
-            currentVolume = currentVolume - 1;
+            currentVolume = currentVolume - 1;                            // уменьшение громкости
         }
-        if (currentVolume == 0) {
+        else if (currentVolume == 0) {
             currentVolume = 0;
         }
     }
