@@ -1,8 +1,8 @@
 package org.example.zadanie10.ru.netology.statistic;
 
 public class Radio {
-    private int currentRadioStation;
-    private int currentVolume;
+    public int currentRadioStation;
+    public int currentVolume;
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
