@@ -44,7 +44,7 @@ public class Radio {
     }
 
     public void upStation() {
-        if (currentStation == maxStation) { // канал +
+        if (currentStation == maxStation) { // станция +
             currentStation = minStation;
         } else {
             currentStation = currentStation + 1;
@@ -52,7 +52,7 @@ public class Radio {
     }
 
     public void downStation() {
-        if (currentStation == minStation) { //канал -
+        if (currentStation == minStation) { //станция -
             currentStation = maxStation;
         } else {
             currentStation = currentStation - 1;

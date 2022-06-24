@@ -27,9 +27,10 @@ public class RadioTest {
     @Test
         //понижение станции
     void shouldDownStation() {
-        Radio radio = new Radio(2);
-        int expected = 1;
+        Radio radio = new Radio(10);
+        radio.setCurrentStation(10);
         radio.downStation();
+        int expected = 9;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
@@ -38,9 +39,9 @@ public class RadioTest {
         //переход вперед от станции = 9
     void shouldAfter9To0Station() {
         Radio radio = new Radio(10);
-        int expected = 0;
         radio.setCurrentStation(9);
         radio.upStation();
+        int expected = 0;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
@@ -49,12 +50,24 @@ public class RadioTest {
         //переход назад от станции = 0
     void shouldTransitFrom0To9Station() {
         Radio radio = new Radio(10);
-        int expected = 9;
         radio.setCurrentStation(0);
         radio.downStation();
+        int expected = 9;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
+
+    @Test
+        //переход назад от станции = 1
+    void shouldTransitFromMinus1() {
+        Radio radio = new Radio(10);
+        radio.setCurrentStation(1);
+        radio.downStation();
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        assertEquals(expected, actual);
+    }
+
 
     @Test
         //ввод станции
