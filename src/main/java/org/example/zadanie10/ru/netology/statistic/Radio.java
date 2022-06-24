@@ -3,10 +3,19 @@ package org.example.zadanie10.ru.netology.statistic;
 public class Radio {
     private int currentStation;
     protected int currentVolume;
-    private int maxStation = 9;
+    private int maxStation;
     private int minStation = 0;
     private int maxVolume = 100;
     private int minVolume = 0;
+
+    public Radio() {
+        maxStation = 9;
+    }
+
+    public Radio(int stationsCount) {
+        maxStation = stationsCount - 1;
+
+    }
 
     public void upVolume() {
         if (currentVolume < maxVolume) {
